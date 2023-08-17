@@ -1,3 +1,3 @@
 # nvim_config
 
-git clone  git@github.com:hqman/nvim_config.git ~/.nvim
+git clone  https://github.com:hqman/nvim_config.git ~/.config/nvim
