@@ -1,4 +1,3 @@
---
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
@@ -18,26 +17,16 @@ return require('packer').startup(function(use)
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
+  use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+  use {
+	  'jose-elias-alvarez/null-ls.nvim',
+	  requires = { 'neovim/nvim-lspconfig' }
+  }
   use { "akinsho/toggleterm.nvim", tag = '*', config = function()
 	  require("toggleterm").setup()
   end}
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use ({ 'projekt0n/github-nvim-theme' })
-  use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v2.x',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},             -- Required
-    	  {'williamboman/mason.nvim'},           -- Optional
-		  {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},     -- Required
-		  {'hrsh7th/cmp-nvim-lsp'}, -- Required
-		  {'L3MON4D3/LuaSnip'},     -- Required
-	  }
-  }
   use {
 	  'glepnir/dashboard-nvim',
 	  event = 'VimEnter',
