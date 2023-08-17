@@ -1,3 +1,4 @@
+--
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
@@ -7,13 +8,6 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
    use { "nvim-tree/nvim-web-devicons"}
-local opt = require("toogleterm").setup({
-  open_mapping = [[<c-\>]],
-    -- 打开新终端后自动进入插入模式
-    start_in_insert = true,
-    -- 在当前buffer的下方打开新终端
-    direction = 'horizontal'
-})
   use { "nvim-tree/nvim-tree.lua"}
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.2',
